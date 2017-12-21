@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Nithin Betegeri",
+      "authorEmail": "nithinpb@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
