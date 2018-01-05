@@ -1,0 +1,43 @@
+<div class="p-24 page-layout">
+  <h1><%= capitalizedPageName %></h1>
+
+    <!-- CONTENT CARD -->
+    <div class="content-card mat-white-bg mat-elevation-z4">
+
+        <mat-table class="<%= pageName %>-table"
+                   #table [dataSource]="dataSource"
+                   matSort
+                   *fuseIfOnDom
+                   [@animateStagger]="{value:'50'}"
+                   fusePerfectScrollbar>
+
+            <!-- ID Column -->
+            <ng-container cdkColumnDef="id">
+                <mat-header-cell *cdkHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                <mat-cell *cdkCellDef="let <%= pageName %>">
+                    <p class="text-truncate">{{<%= pageName %>.id}}</p>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container cdkColumnDef="name">
+                <mat-header-cell *cdkHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                <mat-cell *cdkCellDef="let <%= pageName %>">
+                    <p class="text-truncate">{{<%= pageName %>.name}}</p>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+
+            <mat-row *cdkRowDef="let <%= pageName %>; columns: displayedColumns;"
+                     class="<%= pageName %>"
+                     matRipple
+                     (click)="onSelect(<%= pageName %>)"
+                     [ngClass]="{'mat-light-blue-50-bg':<%= pageName %> == selected}"
+                     [@animate]="{value:'*',params:{y:'100%'}}">
+                     <!-- [routerLink]="'/apps/e-commerce/licenses/'+license.id+'/'+license.handle"> -->
+            </mat-row>
+            {{selected}}
+        </mat-table>
+    </div>
+</div>
