@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-cli-webpack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Scaffolding generator for angular 2 projects with webpack created without @angular/cli",
   "homepage": "",
   "author": {
