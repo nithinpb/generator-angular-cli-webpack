@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { <%= capitalizedPluralPageName %>Component } from './<%= pluralPageName %>.component';
+import { <%= capitalizedPageName %>ListComponent } from './<%= pageName %>-list/<%= pageName %>-list.component';
 import { SharedModule } from '../../../../core/modules/shared.module';
 import { <%= capitalizedPluralPageName %>Service } from './<%= pluralPageName %>.service';
 
@@ -22,8 +23,10 @@ const routes = [
     RouterModule.forChild(routes),
     SharedModule
   ],
-  declarations: [<%= capitalizedPluralPageName %>Component],
-  exports: [<%= capitalizedPluralPageName %>Component],
+  declarations: [
+  <%= capitalizedPluralPageName %>Component,
+  <%= capitalizedPageName %>ListComponent,
+  ],
   providers: [<%= capitalizedPluralPageName %>Service]
 })
 

@@ -1,24 +1,55 @@
 @import "src/app/core/scss/fuse";
 
-.page-layout {
-    width: 100%;
-    .mat-table {
-        background: transparent;
-        box-shadow: none;
+#<%= pluralPageName %> {
 
-        .mat-row {
-            position: relative;
-            cursor: pointer;
-            min-height: 64px;
+    mat-sidenav-container {
 
-            .mat-cell {
+        .sidenav {
+            width: 320px !important;
+            min-width: 320px !important;
+            max-width: 320px !important;
 
-                &.mat-column-icon {
+            &.left-sidenav {
+            }
+
+            &.right-sidenav {
+                @include media-breakpoint('gt-md') {
+                    z-index: 0;
+                }
+            }
+        }
+
+        > .mat-sidenav-content,
+        > .mat-drawer-content {
+            z-index: 1;
+
+            .center {
+
+                .sub-header {
+                    position: relative;
+                    height: 60px;
+                    min-height: 60px;
+                    max-height: 60px;
+
+                    @include media-breakpoint-down('sm') {
+                        height: 60px;
+                        min-height: 60px;
+                        max-height: 60px;
+                    }
+
+                    .add-license-button {
+                        position: absolute;
+                        bottom: -26px;
+                        right: 16px;
+                        z-index: 999;
+                    }
                 }
 
-                &.mat-column-detail-button {
+                .content {
+                    margin-top: 20px;
                 }
             }
         }
     }
+
 }

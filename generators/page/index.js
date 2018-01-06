@@ -135,14 +135,35 @@ module.exports = class extends Generator {
       }
     );
     
-  }
+    this.fs.copyTpl(
+      this.templatePath('_list/_list.component.html'),
+      this.destinationPath(dirname + '/' + pageName + '-list/' + pageName + '-list.component.html'), {
+        pageName: pageName,
+        pluralPageName: pluralPageName,
+        capitalizedPluralPageName: capitalizedPluralPageName,
+        capitalizedPageName: capitalizedPageName
+      }
+    );    
 
-  install() {
-    this.installDependencies({
-      npm: false,
-      bower: false,
-      yarn: false
-    });
+    this.fs.copyTpl(
+      this.templatePath('_list/_list.component.scss'),
+      this.destinationPath(dirname + '/' + pageName + '-list/' + pageName + '-list.component.scss'), {
+        pageName: pageName,
+        pluralPageName: pluralPageName,
+        capitalizedPluralPageName: capitalizedPluralPageName,
+        capitalizedPageName: capitalizedPageName
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_list/_list.component.ts'),
+      this.destinationPath(dirname + '/' + pageName + '-list/' + pageName + '-list.component.ts'), {
+        pageName: pageName,
+        pluralPageName: pluralPageName,
+        capitalizedPluralPageName: capitalizedPluralPageName,
+        capitalizedPageName: capitalizedPageName
+      }
+    );        
   }
 
   end() {
